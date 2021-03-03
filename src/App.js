@@ -54,7 +54,7 @@ export default class App extends Component {
     this.setState({ columns: newColumns })
   }
 
-  moveTask = (direction, task, id) => {
+  moveTask = (direction, task, id, idx) => {
     console.log(direction, task, id)
     const { columns } = this.state;
     const updatingId = direction === "left" ? id - 1 : id + 1;
@@ -71,7 +71,9 @@ export default class App extends Component {
         }
       }
       if (x.id === updatingId) {
-        x.tasks = [...x.tasks, task]
+        const updatedTasks = [...x.tasks];
+        updatedTasks.splice(idx, 0, task);
+        x.tasks = updatedTasks;
       }
       return x
     })

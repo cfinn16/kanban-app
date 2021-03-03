@@ -15,8 +15,8 @@ export default class Column extends Component {
         <div className="name">
           <p>{data.name}</p>
         </div>
-        {data.tasks && data.tasks.map(x => {
-          return <Task name={x} userId={data.id} moveTask={moveTask}/>
+        {data.tasks && data.tasks.map((x, idx) => {
+          return <Task name={x} userId={data.id} moveTask={moveTask} idx={idx}/>
         })}
         <button onClick={() => this.handleButtonClick()}>+ Add a card</button>
       </div>

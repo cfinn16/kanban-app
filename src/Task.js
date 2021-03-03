@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 export default class Task extends Component {
 
   render () {
-    const { name, userId, moveTask } = this.props;
+    const { name, userId, moveTask, idx } = this.props;
     return (
       <div className="task">
         <button
-          onClick={() => moveTask("left", name, userId)}
+          onClick={() => moveTask("left", name, userId, idx)}
           className={userId === 0 ? "disabled" : ""}
           disabled={userId === 0}
         >
@@ -15,7 +15,7 @@ export default class Task extends Component {
         </button>
         <p>{name}</p>
         <button
-          onClick={() => moveTask("right", name, userId)}
+          onClick={() => moveTask("right", name, userId, idx)}
           className={userId === 3 ? "disabled" : ""}
           disabled={userId === 3}
         >
