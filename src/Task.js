@@ -6,13 +6,21 @@ export default class Task extends Component {
     const { name, userId, moveTask } = this.props;
     return (
       <div className="task">
-        {userId > 0 &&
-          <button onClick={() => moveTask("left", name, userId)}>{"<"}</button>
-        }
+        <button
+          onClick={() => moveTask("left", name, userId)}
+          className={userId === 0 ? "disabled" : ""}
+          disabled={userId === 0}
+        >
+          {"<"}
+        </button>
         <p>{name}</p>
-        {userId < 3 &&
-          <button onClick={() => moveTask("right", name, userId)}>{">"}</button>
-        }
+        <button
+          onClick={() => moveTask("right", name, userId)}
+          className={userId === 3 ? "disabled" : ""}
+          disabled={userId === 3}
+        >
+          {">"}
+        </button>
       </div>
     )
   }

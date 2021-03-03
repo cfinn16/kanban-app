@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: #f0f2f6;
+  min-height: 100vh;
 }
 
 .board {
@@ -7,7 +9,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 15px 25px 100px;
+  padding: 15px 25px 100px;
 }
 
 .column {
@@ -15,20 +17,54 @@
   flex-shrink: 1;
   width: 100%;
   text-align: center;
+  background: #ffffff;
+  padding-bottom: 10px;
+}
+
+.column p {
+  margin-top: 0;
+  padding: 2.5px 0;
+}
+
+.column .name {
+  color: #ffffff;
+}
+
+.column:first-child .name {
+  background: #8d6e95;
+}
+
+.column:nth-child(2) .name {
+  background: #39a59b;
+}
+
+.column:nth-child(3) .name {
+  background: #334659;
+}
+
+.column:nth-child(4) .name {
+  background: #e9741e;
 }
 
 .task {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
+  margin: 0 10px;
 }
 
 .task button {
   background: none;
-	color: inherit;
+	color: #1daceb;
 	border: none;
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+button.disabled {
+  cursor: default;
+  color: #d6d6d6;
 }

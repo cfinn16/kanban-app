@@ -12,7 +12,9 @@ export default class Column extends Component {
     const { data, moveTask } = this.props;
     return (
       <div className="column">
-        <h4>{data.name}</h4>
+        <div className="name">
+          <p>{data.name}</p>
+        </div>
         {data.tasks && data.tasks.map(x => {
           return <Task name={x} userId={data.id} moveTask={moveTask}/>
         })}
